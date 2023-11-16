@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>사용자 상세 정보</title>
+</head>
+<body>
+<h1>사용자 상세 정보</h1>
+<table>
+  <tr>
+    <th>num</th>
+    <td th:text="${user.num}"></td>
+  </tr>
+  <tr>
+    <th>이름</th>
+    <td th:text="${user.name}"></td>
+  </tr>
+  <tr>
+    <th>ID</th>
+    <td th:text="${user.id}"></td>
+  </tr>
+  <tr>
+    <th>비밀번호</th>
+    <td th:text="${user.pw}"></td>
+  </tr>
+</table>
+<a th:href="@{/users/{id}/edit(id=${user.id})}">수정</a>
+<form th:action="@{/users/{id}/delete(id=${user.id})}" method="post">
+  <button type="submit">삭제</button>
+</form>
+<a href="/users">사용자 목록으로 돌아가기</a>
+</body>
+</html>

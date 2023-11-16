@@ -5,5 +5,26 @@
     <select id="findAll" resultType="com.loginStudy.domain.User">
         SELECT * FROM users
     </select>
-</mapper>
 
+    <insert id="addUser" parameterType="com.loginStudy.domain.User">
+        INSERT INTO users (id, pw, name)
+        VALUES (#{id}, #{pw}, #{name})
+    </insert>
+
+    <select id="findUserById" resultType="com.loginStudy.domain.User" parameterType="int">
+        SELECT *
+        FROM users
+        WHERE num = #{num}
+    </select>
+
+    <update id="updateUser" parameterType="com.loginStudy.domain.User">
+        UPDATE users
+        SET name = #{name}, pw = #{pw}
+        WHERE num = #{num}
+    </update>
+
+    <delete id="deleteUser" parameterType="int">
+        DELETE FROM users
+        WHERE num = #{num}
+    </delete>
+</mapper>
