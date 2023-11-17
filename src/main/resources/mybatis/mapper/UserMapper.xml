@@ -17,6 +17,12 @@
         WHERE num = #{num}
     </select>
 
+    <select id="findByLoginId" resultType="com.loginStudy.domain.User" parameterType="String">
+        SELECT *
+        FROM users
+        WHERE id = #{id}
+    </select>
+
     <update id="updateUser" parameterType="com.loginStudy.domain.User">
         UPDATE users
         SET name = #{name}, pw = #{pw}

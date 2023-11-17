@@ -26,5 +26,5 @@ mybatis:
   mapper-locations: classpath:mybatis/mapper/**/*.xml
   configuration:
     map-underscore-to-camel-case: true
-  type-aliases-package: com.loginStudy.domain
+  type-aliases-package: com.loginStudy.domain # result type에 패키지명을 생략할 수 있도록 alias 설정
 

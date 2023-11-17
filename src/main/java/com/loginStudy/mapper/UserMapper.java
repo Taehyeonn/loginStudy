@@ -5,6 +5,7 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
+import java.util.Optional;
 
 @Mapper
 public interface UserMapper {
@@ -16,6 +17,8 @@ public interface UserMapper {
 
     // 특정 사용자 조회
     User findUserById(@Param("num") int num);
+
+    Optional<User> findByLoginId(@Param("id") String id);
 
     // 사용자 정보 업데이트
     void updateUser(User user);
